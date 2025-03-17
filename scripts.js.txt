@@ -1,0 +1,50 @@
+// scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Dynamic project counter
+    const projects = document.querySelectorAll('.project');
+    const projectCount = projects.length;
+    const counterElement = document.createElement('p');
+    counterElement.textContent = `Total Projects: ${projectCount}`;
+    counterElement.style.textAlign = 'center';
+    counterElement.style.marginBottom = '1rem';
+    counterElement.style.color = '#000000';
+    document.querySelector('section').insertBefore(counterElement, projects[0]);
+
+    // Expand project details on hover
+    projects.forEach(project => {
+        project.addEventListener('mouseover', () => {
+            project.style.padding = '2rem';
+            project.querySelectorAll('p, ul, img').forEach(element => {
+                element.style.opacity = '1';
+                element.style.transform = 'scale(1.02)';
+            });
+        });
+        project.addEventListener('mouseout', () => {
+            project.style.padding = '1.5rem';
+            project.querySelectorAll('p, ul, img').forEach(element => {
+                element.style.opacity = '1';
+                element.style.transform = 'scale(1)';
+            });
+        });
+    });
+
+    // Add a subtle animation to images on load
+    document.querySelectorAll('img').forEach(img => {
+        img.style.opacity = '0';
+        img.addEventListener('load', () => {
+            img.style.transition = 'opacity 0.5s ease';
+            img.style.opacity = '1';
+        });
+    });
+});

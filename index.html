@@ -1,136 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Erick Kigo</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: black;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(to right, #8a2be2, #87cefa);
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-        }
-        nav ul {
-            list-style: none;
-            text-align: center;
-            background: #e6e6fa;
-            padding: 10px;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #8a2be2;
-        }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-        }
-        .footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #8a2be2;
-            margin-top: 20px;
-            border-radius: 5px;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Erick Kigo | Data Analyst</title>
+  <meta name="description" content="Erick Kigo is a Data Analyst at Mill Bakers Limited and a University of Nairobi graduate in Economics and Statistics. He also runs Kylyst Solutions Hub.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+  <style>
+    :root {
+      --violet: #7a1fd6;
+      --violet-deep: #4a1580;
+      --sky: #87cefa;
+      --ink: #1d1633;
+      --muted: #5b5673;
+      --bg: #f3f6fc;
+      --surface: #ffffff;
+      --line: #dcd6ee;
+      --chip: #ece4fb;
+      --chip-ink: #3c1670;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --violet: #b57bff;
+        --violet-deep: #2a1250;
+        --ink: #efeaff;
+        --muted: #b3acd0;
+        --bg: #120d22;
+        --surface: #1b1530;
+        --line: #342a55;
+        --chip: #2d2150;
+        --chip-ink: #dccdff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body.ek {
+      margin: 0;
+      padding: 0;
+      font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    .ek a { color: var(--violet); }
+    .ek a:focus-visible, .ek .btn:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* Top bar */
+    .ek-bar {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .ek-bar .inner {
+      max-width: 1000px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .ek-brand {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800; font-size: 20px; text-decoration: none; color: var(--ink) !important;
+    }
+    .ek-bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    .ek-bar nav a {
+      text-decoration: none; font-weight: 500; color: var(--muted);
+      padding-bottom: 2px; border-bottom: 2px solid transparent;
+    }
+    .ek-bar nav a:hover { color: var(--violet); }
+    .ek-bar nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--violet); }
+
+    /* Hero */
+    .ek-hero {
+      background: linear-gradient(115deg, var(--violet-deep) 0%, #7a1fd6 55%, #4fa9e8 100%);
+      color: #fff;
+    }
+    .ek-hero .inner {
+      max-width: 1000px; margin: 0 auto; padding: 72px 24px 80px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
+    }
+    .ek-hero h1 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.02; letter-spacing: -0.02em; font-weight: 800;
+      margin: 0 0 18px;
+    }
+    .ek-hero .lead { font-size: 1.2rem; max-width: 34ch; margin: 0 0 12px; font-weight: 500; }
+    .ek-hero .sub { max-width: 52ch; margin: 0 0 28px; opacity: 0.92; }
+    .ek-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 20px; border-radius: 10px;
+      font-weight: 600; text-decoration: none; font-size: 0.98rem;
+    }
+    .btn-solid { background: #fff; color: var(--violet-deep) !important; }
+    .btn-solid:hover { background: #f1e8ff; }
+    .btn-ghost { border: 2px solid rgba(255,255,255,0.75); color: #fff !important; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
+
+    .ek-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius);
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+    .ek-avatar {
+      width: 84px; height: 84px; border-radius: 50%;
+      background: #fff; color: var(--violet-deep);
+      display: grid; place-items: center;
+      font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30px;
+      margin-bottom: 18px;
+    }
+    .ek-card dl { margin: 0; }
+    .ek-card dt { font-size: 0.85rem; opacity: 0.8; margin-top: 14px; }
+    .ek-card dt:first-child { margin-top: 0; }
+    .ek-card dd { margin: 2px 0 0; font-weight: 600; }
+
+    /* Content sections */
+    .ek-main { max-width: 1000px; margin: 0 auto; padding: 24px 24px 60px; }
+    .ek-sec {
+      display: grid; grid-template-columns: 220px 1fr; gap: 40px;
+      padding: 48px 0; border-bottom: 1px solid var(--line);
+    }
+    .ek-sec:last-child { border-bottom: 0; }
+    .ek-sec > h2 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.6rem; line-height: 1.2; margin: 0;
+      position: sticky; top: 84px; align-self: start;
+    }
+
+    /* Timeline for work */
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 3px solid var(--line); }
+    .timeline li { position: relative; padding-bottom: 28px; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -35px; top: 7px;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: var(--surface); border: 3px solid var(--violet);
+    }
+    .timeline li.now::before { background: var(--violet); }
+    .timeline h3 { margin: 0; font-size: 1.12rem; }
+    .timeline .when { color: var(--muted); font-size: 0.93rem; margin: 2px 0 6px; }
+    .timeline p { margin: 0; max-width: 62ch; }
+
+    .edu p { margin: 0 0 14px; max-width: 62ch; }
+    .edu p:last-child { margin-bottom: 0; }
+    .edu .meta { color: var(--muted); font-size: 0.93rem; display: block; }
+
+    /* Skills */
+    .skill-group { margin-bottom: 22px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group h3 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+    .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips li {
+      background: var(--chip); color: var(--chip-ink);
+      padding: 6px 14px; border-radius: 999px; font-weight: 500; font-size: 0.95rem;
+    }
+
+    /* Certifications */
+    .cert-group { margin-bottom: 26px; }
+    .cert-group:last-child { margin-bottom: 0; }
+    .cert-group h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    .certs { list-style: none; margin: 0; padding: 0; }
+    .certs li {
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      padding: 10px 0; border-top: 1px solid var(--line);
+    }
+    .certs li:last-child { border-bottom: 1px solid var(--line); }
+    .certs .name { font-weight: 600; }
+    .certs .by { color: var(--muted); font-size: 0.95rem; }
+
+    /* Contact */
+    .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .contact li { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact .k { min-width: 150px; color: var(--muted); }
+    .contact a { font-weight: 600; }
+
+    .ek-foot {
+      text-align: center; padding: 28px 24px;
+      background: var(--violet-deep); color: #e9ddff; font-size: 0.95rem;
+    }
+
+    /* Single page-load reveal on the hero text */
+    @media (prefers-reduced-motion: no-preference) {
+      .ek-hero .inner > div:first-child { animation: ek-rise 0.7s ease-out both; }
+      @keyframes ek-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    }
+
+    @media (max-width: 820px) {
+      .ek-hero .inner { grid-template-columns: 1fr; padding: 52px 20px 56px; gap: 32px; }
+      .ek-sec { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+      .ek-sec > h2 { position: static; }
+      .ek-main { padding: 8px 20px 40px; }
+      .contact .k { min-width: 100%; }
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>About Me</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="container">
-        <section>
-            <h2>ERICK KIGO </h2>
-            <p>Motivated economics student with strong analytical skills and a passion for data analysis.
-               </p>
-        </section>
+<body class="ek">
 
-        <section>
-            <h2>Education</h2>
-            <p><strong>Bachelor of Economics</strong> - University of Nairobi (Sept 2021 - Present)</p>
-            <p><strong>Kenya Certificate of Secondary School Education</strong> - Nyahururu Elite Schools </p>
-            <p><strong>Kenya Certificate of Primary School Education</strong> - Nyeri Primary School </p>
-        </section>
-
-        <section>
-            <h2>Work & Research Experience</h2>
-            <ul>
-                <li>📊 <strong>Kenya National Bureau of Statistics (KNBS)</strong> - 3 months of data collection & analysis.</li>
-                <li>📈 <strong>Busara Research - AMREF Health Africa</strong> - Behavioral economics research assistant.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Skills & Expertise</h2>
-            <ul>
-                <li>📊 Data Analysis (Python, Pandas, Power BI, Excel, SQL, Tableau)</li>
-                <li>📈 Statistical Modeling & Economics Research</li>
-                <li>🧠 Generative AI & Machine Learning Basics</li>
-                <li>🔍 Forensic Accounting & Fraud Examination</li>
-                <li>📝 Time Management, Communication, & Creativity</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li>✔️ Introduction to Data Analysis Using Excel (Coursera)</li>
-                <li>✔️ Using Basic Formulas and Functions in Excel (Coursera)</li>
-                <li>✔️ From Excel to Power BI (Coursera)</li>
-                <li>✔️ Python and Statistics for Financial Analysis (Hong Kong University)</li>
-                <li>✔️ Introduction to Generative AI (Google Cloud Training)</li>
-                <li>✔️ Introduction to Cybersecurity Training/Mentorship (Ajira Digital Program)</li>
-                <li>✔️ Ready to Work Certifications (Absa Kenya)</li>
-                <li>✔️ Forensic Accounting and Fraud Examination (West Virginia University)</li>
-                <li>✔️ Foundations of Data Science: K-Means Clustering in Python (University of London)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Connect with Me</h2>
-            <ul>
-                <li>🔗 <a href="https://github.com/kygosloth" target="_blank">GitHub</a></li>
-                <li>🔗 <a href="https://www.linkedin.com/in/eric-kigo-b90359185/" target="_blank">LinkedIn</a></li>
-                <li>📧 <a href="mailto:erickigo36@gmail.com">Email Me</a></li>
-                <li>📞 <a href="tel:+254702371788">Call: 0702371788</a></li>
-            </ul>
-        </section>
+  <header class="ek-bar">
+    <div class="inner">
+      <a class="ek-brand" href="index.html">Erick Kigo</a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">Kylyst Solutions Hub</a>
+      </nav>
     </div>
+  </header>
 
-    <footer class="footer">
-        <p>© 2024 Erick Kigo. All Rights Reserved.</p>
-    </footer>
+  <section class="ek-hero" aria-labelledby="top">
+    <div class="inner">
+      <div>
+        <h1 id="top">Erick Kigo</h1>
+        <p class="lead">Data Analyst at Mill Bakers Limited. Economics and Statistics graduate from the University of Nairobi.</p>
+        <p class="sub">I work with data every day, and I run Kylyst Solutions Hub on the side for data analysis, statistics and web projects. I like digging into Kenyan economic data and showing what it says in a way people can use.</p>
+        <div class="ek-actions">
+          <a class="btn btn-solid" href="projects.html">See my projects</a>
+          <a class="btn btn-ghost" href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">Visit Kylyst Solutions Hub</a>
+          <a class="btn btn-ghost" href="https://wa.me/254702371788" target="_blank" rel="noopener">Message me on WhatsApp</a>
+        </div>
+      </div>
+
+      <aside class="ek-card" aria-label="Quick facts">
+        <!-- To use a photo instead of initials: replace the div below with
+             <img class="ek-avatar" src="images/erick.jpg" alt="Erick Kigo"> -->
+        <div class="ek-avatar" aria-hidden="true">EK</div>
+        <dl>
+          <dt>Working as</dt>
+          <dd>Data Analyst, Mill Bakers Limited (since Sep 2025)</dd>
+          <dt>Degree</dt>
+          <dd>Bachelor of Economics and Statistics, University of Nairobi</dd>
+          <dt>Tools</dt>
+          <dd>Python, SQL, Power BI, Tableau, Stata, R, SPSS, Excel</dd>
+          <dt>Learning</dt>
+          <dd>Mandarin (HSK 1, Nov 2025)</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <main class="ek-main">
+
+    <section class="ek-sec" aria-labelledby="work">
+      <h2 id="work">Work and research experience</h2>
+      <ol class="timeline">
+        <li class="now">
+          <h3>Data Analyst, Mill Bakers Limited</h3>
+          <div class="when">September 2025 to present</div>
+          <p>Working as the company's data analyst.</p>
+        </li>
+        <li class="now">
+          <h3>Founder, Kylyst Solutions Hub</h3>
+          <div class="when">Ongoing</div>
+          <p>I take on data analysis, statistics, financial analysis, reports, presentations and website projects for students and businesses.</p>
+        </li>
+        <li>
+          <h3>Kenya National Bureau of Statistics (KNBS)</h3>
+          <div class="when">3 months</div>
+          <p>Data collection and analysis.</p>
+        </li>
+        <li>
+          <h3>Busara Research, AMREF Health Africa</h3>
+          <div class="when">Research assistant</div>
+          <p>Behavioural economics research.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="ek-sec" aria-labelledby="edu">
+      <h2 id="edu">Education</h2>
+      <div class="edu">
+        <p>
+          <strong>Bachelor of Economics and Statistics</strong>, University of Nairobi
+          <span class="meta">September 2021 to graduation</span>
+        </p>
+        <p>
+          <strong>Kenya Certificate of Secondary Education</strong>, Nyahururu Elite Schools
+        </p>
+        <p>
+          <strong>Kenya Certificate of Primary Education</strong>, Nyeri Primary School
+        </p>
+      </div>
+    </section>
+
+    <section class="ek-sec" aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <div>
+        <div class="skill-group">
+          <h3>Data analysis and dashboards</h3>
+          <ul class="chips">
+            <li>Python</li><li>Pandas</li><li>SQL</li><li>Power BI</li><li>Tableau</li><li>Excel</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Statistics and economics</h3>
+          <ul class="chips">
+            <li>Stata</li><li>R</li><li>SPSS</li><li>Statistical modelling</li><li>Economics research</li><li>Regression and correlation</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Finance and risk</h3>
+          <ul class="chips">
+            <li>NPV and IRR analysis</li><li>Forensic accounting</li><li>Fraud examination</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Web and AI</h3>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Generative AI basics</li><li>Machine learning basics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Working style</h3>
+          <ul class="chips">
+            <li>Time management</li><li>Communication</li><li>Creativity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ek-sec" aria-labelledby="certs">
+      <h2 id="certs">Certifications</h2>
+      <div>
+        <div class="cert-group">
+          <h3>Data and analytics</h3>
+          <ul class="certs">
+            <li><span class="name">Introduction to Data Analysis Using Excel</span><span class="by">Coursera</span></li>
+            <li><span class="name">Using Basic Formulas and Functions in Excel</span><span class="by">Coursera</span></li>
+            <li><span class="name">From Excel to Power BI</span><span class="by">Coursera</span></li>
+            <li><span class="name">Python and Statistics for Financial Analysis</span><span class="by">Hong Kong University</span></li>
+            <li><span class="name">Foundations of Data Science: K-Means Clustering in Python</span><span class="by">University of London</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Technology</h3>
+          <ul class="certs">
+            <li><span class="name">HCIA-Datacom V1.0 Course</span><span class="by">Huawei Talent Online, July 2025</span></li>
+            <li><span class="name">Introduction to Generative AI</span><span class="by">Google Cloud Training</span></li>
+            <li><span class="name">Introduction to Cybersecurity (training and mentorship)</span><span class="by">Ajira Digital Program</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Finance and work readiness</h3>
+          <ul class="certs">
+            <li><span class="name">Forensic Accounting and Fraud Examination</span><span class="by">West Virginia University</span></li>
+            <li><span class="name">Ready to Work</span><span class="by">Absa Kenya</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Language</h3>
+          <ul class="certs">
+            <li><span class="name">HSK Level 1 (Chinese proficiency)</span><span class="by">Awarded November 2025</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ek-sec" aria-labelledby="contact">
+      <h2 id="contact">Get in touch</h2>
+      <ul class="contact">
+        <li><span class="k">WhatsApp and calls</span><a href="https://wa.me/254702371788" target="_blank" rel="noopener">0702 371 788</a></li>
+        <li><span class="k">Email</span><a href="mailto:erickigo36@gmail.com">erickigo36@gmail.com</a></li>
+        <li><span class="k">Email for Kylyst</span><a href="mailto:kygopython@gmail.com">kygopython@gmail.com</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/eric-kigo-b90359185/" target="_blank" rel="noopener">Erick Kigo</a></li>
+        <li><span class="k">GitHub</span><a href="https://github.com/kygosloth" target="_blank" rel="noopener">kygosloth</a></li>
+        <li><span class="k">Kylyst Solutions Hub</span><a href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">kyrick-solutions-hub.vercel.app</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="ek-foot">
+    <p>&copy; 2026 Erick Kigo. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>

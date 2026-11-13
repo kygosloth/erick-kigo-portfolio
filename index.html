@@ -1,216 +1,409 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=220&section=header&text=Erick%20Kigo&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=KY4PY%20%C2%B7%20Economics%20%26%20Statistics%20%C2%B7%20Data%20Analyst&descAlignY=60&descSize=20" width="100%" />
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Erick Kigo | Data Analyst</title>
+  <meta name="description" content="Erick Kigo is a Data Analyst at Mill Bakers Limited and a University of Nairobi graduate in Economics and Statistics. He also runs Kylyst Solutions Hub.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+  <style>
+    :root {
+      --violet: #7a1fd6;
+      --violet-deep: #4a1580;
+      --sky: #87cefa;
+      --ink: #1d1633;
+      --muted: #5b5673;
+      --bg: #f3f6fc;
+      --surface: #ffffff;
+      --line: #dcd6ee;
+      --chip: #ece4fb;
+      --chip-ink: #3c1670;
+      --radius: 14px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --violet: #b57bff;
+        --violet-deep: #2a1250;
+        --ink: #efeaff;
+        --muted: #b3acd0;
+        --bg: #120d22;
+        --surface: #1b1530;
+        --line: #342a55;
+        --chip: #2d2150;
+        --chip-ink: #dccdff;
+      }
+    }
 
-<p align="center">
-  <a href="https://github.com/kygosloth">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=2EA043&center=true&vCenter=true&width=640&lines=Data+Analyst+at+Mill+Bakers+Limited;Economics+%26+Statistics+graduate;Python+%C2%B7+Power+BI+%C2%B7+Stata+%C2%B7+SQL;I+also+build+websites+%F0%9F%8C%90" alt="Typing intro" />
-  </a>
-</p>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body.ek {
+      margin: 0;
+      padding: 0;
+      font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    .ek a { color: var(--violet); }
+    .ek a:focus-visible, .ek .btn:focus-visible {
+      outline: 3px solid var(--sky);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Mill%20Bakers%20Limited-Data%20Analyst-E67E22?style=for-the-badge&logo=databricks&logoColor=white" />
-  <img src="https://img.shields.io/badge/University%20of%20Nairobi-Economics%20%26%20Statistics-1f6feb?style=for-the-badge&logo=googlescholar&logoColor=white" />
-  <img src="https://img.shields.io/badge/Huawei-HCIA--Datacom-CF0A2C?style=for-the-badge&logo=huawei&logoColor=white" />
-  <img src="https://img.shields.io/badge/Based%20in-Kenya%20%F0%9F%87%B0%F0%9F%87%AA-black?style=for-the-badge" />
-</p>
+    /* Top bar */
+    .ek-bar {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .ek-bar .inner {
+      max-width: 1000px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .ek-brand {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-weight: 800; font-size: 20px; text-decoration: none; color: var(--ink) !important;
+    }
+    .ek-bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    .ek-bar nav a {
+      text-decoration: none; font-weight: 500; color: var(--muted);
+      padding-bottom: 2px; border-bottom: 2px solid transparent;
+    }
+    .ek-bar nav a:hover { color: var(--violet); }
+    .ek-bar nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--violet); }
 
-<p align="center">
-  <a href="https://erick-kigo-portfolio.vercel.app/projects.html"><img src="https://img.shields.io/badge/My%20Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
-  <a href="https://kyrick-solutions-hub.vercel.app/"><img src="https://img.shields.io/badge/Kylyst%20Solutions%20Hub-2ea043?style=for-the-badge&logo=rocket&logoColor=white" /></a>
-  <a href="https://wa.me/254702371788"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
-  <a href="mailto:kygopython@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
+    /* Hero */
+    .ek-hero {
+      background: linear-gradient(115deg, var(--violet-deep) 0%, #7a1fd6 55%, #4fa9e8 100%);
+      color: #fff;
+    }
+    .ek-hero .inner {
+      max-width: 1000px; margin: 0 auto; padding: 72px 24px 80px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
+    }
+    .ek-hero h1 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      line-height: 1.02; letter-spacing: -0.02em; font-weight: 800;
+      margin: 0 0 18px;
+    }
+    .ek-hero .lead { font-size: 1.2rem; max-width: 34ch; margin: 0 0 12px; font-weight: 500; }
+    .ek-hero .sub { max-width: 52ch; margin: 0 0 28px; opacity: 0.92; }
+    .ek-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 20px; border-radius: 10px;
+      font-weight: 600; text-decoration: none; font-size: 0.98rem;
+    }
+    .btn-solid { background: #fff; color: var(--violet-deep) !important; }
+    .btn-solid:hover { background: #f1e8ff; }
+    .btn-ghost { border: 2px solid rgba(255,255,255,0.75); color: #fff !important; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.14); }
 
----
+    .ek-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius);
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+    .ek-avatar {
+      width: 84px; height: 84px; border-radius: 50%;
+      background: #fff; color: var(--violet-deep);
+      display: grid; place-items: center;
+      font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 30px;
+      margin-bottom: 18px;
+    }
+    .ek-card dl { margin: 0; }
+    .ek-card dt { font-size: 0.85rem; opacity: 0.8; margin-top: 14px; }
+    .ek-card dt:first-child { margin-top: 0; }
+    .ek-card dd { margin: 2px 0 0; font-weight: 600; }
 
-## 👋 About me
+    /* Content sections */
+    .ek-main { max-width: 1000px; margin: 0 auto; padding: 24px 24px 60px; }
+    .ek-sec {
+      display: grid; grid-template-columns: 220px 1fr; gap: 40px;
+      padding: 48px 0; border-bottom: 1px solid var(--line);
+    }
+    .ek-sec:last-child { border-bottom: 0; }
+    .ek-sec > h2 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: 1.6rem; line-height: 1.2; margin: 0;
+      position: sticky; top: 84px; align-self: start;
+    }
 
-I'm Erick, an economics and statistics graduate from the **University of Nairobi**. Since **September 2025** I've been working as a **Data Analyst at Mill Bakers Limited**.
+    /* Timeline for work */
+    .timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 3px solid var(--line); }
+    .timeline li { position: relative; padding-bottom: 28px; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -35px; top: 7px;
+      width: 15px; height: 15px; border-radius: 50%;
+      background: var(--surface); border: 3px solid var(--violet);
+    }
+    .timeline li.now::before { background: var(--violet); }
+    .timeline h3 { margin: 0; font-size: 1.12rem; }
+    .timeline .when { color: var(--muted); font-size: 0.93rem; margin: 2px 0 6px; }
+    .timeline p { margin: 0; max-width: 62ch; }
 
-Outside my day job I run **[Kylyst Solutions Hub](https://kyrick-solutions-hub.vercel.app/)**, where I take on data analysis, statistics, report writing and web projects for students and businesses.
+    .edu p { margin: 0 0 14px; max-width: 62ch; }
+    .edu p:last-child { margin-bottom: 0; }
+    .edu .meta { color: var(--muted); font-size: 0.93rem; display: block; }
 
-I enjoy digging into Kenyan economic data, finding what's actually going on in the numbers, and presenting it in a way people can use. I also build websites, mostly themed and commercial ones.
+    /* Skills */
+    .skill-group { margin-bottom: 22px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group h3 { font-size: 1rem; margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+    .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips li {
+      background: var(--chip); color: var(--chip-ink);
+      padding: 6px 14px; border-radius: 999px; font-weight: 500; font-size: 0.95rem;
+    }
 
-- 💼 **Now:** Data Analyst at Mill Bakers Limited
-- 📚 **Studied:** Bachelor of Economics and Statistics, University of Nairobi
-- 🌐 **Side hustle:** Kylyst Solutions Hub for data, stats and web work
-- 🀄 **Certified:** HSK Level 1 (Chinese proficiency), September 2025
-- 🌱 **Working on:** applied econometrics, forecasting and machine learning
+    /* Certifications */
+    .cert-group { margin-bottom: 26px; }
+    .cert-group:last-child { margin-bottom: 0; }
+    .cert-group h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    .certs { list-style: none; margin: 0; padding: 0; }
+    .certs li {
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      padding: 10px 0; border-top: 1px solid var(--line);
+    }
+    .certs li:last-child { border-bottom: 1px solid var(--line); }
+    .certs .name { font-weight: 600; }
+    .certs .by { color: var(--muted); font-size: 0.95rem; }
 
----
+    /* Contact */
+    .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .contact li { display: flex; gap: 12px; flex-wrap: wrap; }
+    .contact .k { min-width: 150px; color: var(--muted); }
+    .contact a { font-weight: 600; }
 
-## 🧰 What I work with
+    .cert-highlight { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 30px; }
+    .cert-highlight .item { background: var(--chip); color: var(--chip-ink); border-radius: var(--radius); padding: 16px 18px; }
+    .cert-highlight .item strong { display: block; font-size: 1.02rem; }
+    .cert-highlight .item span { font-size: 0.93rem; opacity: 0.85; }
 
-| | Area | What I do |
-|---|------|-----------|
-| 📈 | **Econometrics & Statistics** | Regression, correlation analysis, hypothesis testing and forecasting with Python, Stata, R and SPSS |
-| 📊 | **Data Analysis & Dashboards** | Cleaning messy data, exploring it with Pandas and SQL, and building Power BI and Tableau dashboards |
-| 💼 | **Financial Analysis** | Accounting basics, NPV and IRR analysis, business reports |
-| 🌐 | **Web Development** | Portfolio, themed and commercial websites with HTML, CSS and JavaScript |
+    .contact-wrap { display: grid; grid-template-columns: 1fr 240px; gap: 40px; align-items: start; }
+    .qr {
+      margin: 0; text-align: center; background: #fff;
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 16px;
+    }
+    .qr img { width: 100%; height: auto; display: block; }
+    .qr figcaption { color: #2a1250; font-weight: 600; font-size: 0.95rem; margin-top: 10px; }
+    .qr a { color: #4a1580; font-size: 0.88rem; font-weight: 500; }
 
----
+    .ek-foot {
+      text-align: center; padding: 28px 24px;
+      background: var(--violet-deep); color: #e9ddff; font-size: 0.95rem;
+    }
 
-## 💻 Tech stack
+    /* Single page-load reveal on the hero text */
+    @media (prefers-reduced-motion: no-preference) {
+      .ek-hero .inner > div:first-child { animation: ek-rise 0.7s ease-out both; }
+      @keyframes ek-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    }
 
-<p>
-  <img src="https://skillicons.dev/icons?i=python,mysql,html,css,js,git,github,vercel,powerbi&theme=dark" />
-</p>
+    @media (max-width: 820px) {
+      .ek-hero .inner { grid-template-columns: 1fr; padding: 52px 20px 56px; gap: 32px; }
+      .ek-sec { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+      .ek-sec > h2 { position: static; }
+      .ek-main { padding: 8px 20px 40px; }
+      .contact .k { min-width: 100%; }
+      .cert-highlight { grid-template-columns: 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .qr { max-width: 240px; }
+    }
+  </style>
+</head>
+<body class="ek">
 
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=flat-square&logo=numpy&logoColor=white) ![SciPy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=flat-square&logo=scipy&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=flat-square&logo=scikit-learn&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=flat-square&logo=Matplotlib&logoColor=black) ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=flat-square&logo=plotly&logoColor=white) ![SQL Server](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=flat-square&logo=microsoft%20sql%20server&logoColor=white) ![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white) ![Stata](https://img.shields.io/badge/Stata-1A5F91?style=flat-square) ![SPSS](https://img.shields.io/badge/SPSS-052FAD?style=flat-square&logo=ibm&logoColor=white) ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat-square&logo=tableau&logoColor=white) ![Power BI](https://img.shields.io/badge/power_bi-F2C811?style=flat-square&logo=powerbi&logoColor=black) ![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white)
+  <header class="ek-bar">
+    <div class="inner">
+      <a class="ek-brand" href="index.html">Erick Kigo</a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">Kylyst Solutions Hub</a>
+      </nav>
+    </div>
+  </header>
 
----
+  <section class="ek-hero" aria-labelledby="top">
+    <div class="inner">
+      <div>
+        <h1 id="top">Erick Kigo</h1>
+        <p class="lead">Data Analyst at Mill Bakers Limited. Economics and Statistics graduate from the University of Nairobi.</p>
+        <p class="sub">I work with data every day, and I run Kylyst Solutions Hub on the side for data analysis, statistics and web projects. I like digging into Kenyan economic data and showing what it says in a way people can use.</p>
+        <div class="ek-actions">
+          <a class="btn btn-solid" href="projects.html">See my projects</a>
+          <a class="btn btn-ghost" href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">Visit Kylyst Solutions Hub</a>
+          <a class="btn btn-ghost" href="https://wa.me/254702371788" target="_blank" rel="noopener">Message me on WhatsApp</a>
+        </div>
+      </div>
 
-## 🎓 Education & certifications
+      <aside class="ek-card" aria-label="Quick facts">
+        <!-- To use a photo instead of initials: replace the div below with
+             <img class="ek-avatar" src="images/erick.jpg" alt="Erick Kigo"> -->
+        <div class="ek-avatar" aria-hidden="true">EK</div>
+        <dl>
+          <dt>Working as</dt>
+          <dd>Data Analyst, Mill Bakers Limited (since Sep 2025)</dd>
+          <dt>Degree</dt>
+          <dd>Bachelor of Economics and Statistics, University of Nairobi</dd>
+          <dt>Tools</dt>
+          <dd>Python, SQL, Power BI, Tableau, Stata, R, SPSS, Excel</dd>
+          <dt>Also certified in</dt>
+          <dd>Huawei HCIA-Datacom course and HSK Level 1 (Chinese)</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
 
-<table>
-  <tr>
-    <td align="center" width="110"><img src="https://img.shields.io/badge/UoN-1f6feb?style=for-the-badge&logo=googlescholar&logoColor=white" /></td>
-    <td><b>Bachelor of Economics and Statistics</b><br/>University of Nairobi</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/Huawei-CF0A2C?style=for-the-badge&logo=huawei&logoColor=white" /></td>
-    <td><b>HCIA-Datacom V1.0 Course</b><br/>Huawei Talent Online · issued 14 July 2025</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/HSK-1-DE2910?style=for-the-badge" /></td>
-    <td><b>HSK Level 1 (Chinese proficiency)</b><br/>Certified September 2025</td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/Data%20Analyst-Certified-2ea043?style=for-the-badge" /></td>
-    <td><b>Certified Data Analyst</b></td>
-  </tr>
-</table>
+  <main class="ek-main">
 
----
+    <section class="ek-sec" aria-labelledby="work">
+      <h2 id="work">Work and research experience</h2>
+      <ol class="timeline">
+        <li class="now">
+          <h3>Data Analyst, Mill Bakers Limited</h3>
+          <div class="when">September 2025 to present</div>
+          <p>Working as the company's data analyst.</p>
+        </li>
+        <li class="now">
+          <h3>Founder, Kylyst Solutions Hub</h3>
+          <div class="when">Ongoing</div>
+          <p>I take on data analysis, statistics, financial analysis, reports, presentations and website projects for students and businesses.</p>
+        </li>
+        <li>
+          <h3>Kenya National Bureau of Statistics (KNBS)</h3>
+          <div class="when">3 months</div>
+          <p>Data collection and analysis.</p>
+        </li>
+        <li>
+          <h3>Busara Research, AMREF Health Africa</h3>
+          <div class="when">Research assistant</div>
+          <p>Behavioural economics research.</p>
+        </li>
+      </ol>
+    </section>
 
-## 💼 Experience
+    <section class="ek-sec" aria-labelledby="edu">
+      <h2 id="edu">Education</h2>
+      <div class="edu">
+        <p>
+          <strong>Bachelor of Economics and Statistics</strong>, University of Nairobi
+          <span class="meta">September 2021 to graduation</span>
+        </p>
+        <p>
+          <strong>Kenya Certificate of Secondary Education</strong>, Nyahururu Elite Schools
+        </p>
+        <p>
+          <strong>Kenya Certificate of Primary Education</strong>, Nyeri Primary School
+        </p>
+      </div>
+    </section>
 
-| When | Where | Role |
-|------|-------|------|
-| Sep 2025 to present | **Mill Bakers Limited** | Data Analyst |
-| Ongoing | **[Kylyst Solutions Hub](https://kyrick-solutions-hub.vercel.app/)** | Founder, data analysis, statistics and web projects |
+    <section class="ek-sec" aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <div>
+        <div class="skill-group">
+          <h3>Data analysis and dashboards</h3>
+          <ul class="chips">
+            <li>Python</li><li>Pandas</li><li>SQL</li><li>Power BI</li><li>Tableau</li><li>Excel</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Statistics and economics</h3>
+          <ul class="chips">
+            <li>Stata</li><li>R</li><li>SPSS</li><li>Statistical modelling</li><li>Economics research</li><li>Regression and correlation</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Finance and risk</h3>
+          <ul class="chips">
+            <li>NPV and IRR analysis</li><li>Forensic accounting</li><li>Fraud examination</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Web and AI</h3>
+          <ul class="chips">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Generative AI basics</li><li>Machine learning basics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Working style</h3>
+          <ul class="chips">
+            <li>Time management</li><li>Communication</li><li>Creativity</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
----
+    <section class="ek-sec" aria-labelledby="certs">
+      <h2 id="certs">Certifications</h2>
+      <div>
+        <div class="cert-highlight">
+          <div class="item"><strong>HCIA-Datacom V1.0 Course</strong><span>Huawei Talent Online, July 2025</span></div>
+          <div class="item"><strong>HSK Level 1 (Chinese proficiency)</strong><span>Certified September 2025</span></div>
+        </div>
+        <div class="cert-group">
+          <h3>Data and analytics</h3>
+          <ul class="certs">
+            <li><span class="name">Introduction to Data Analysis Using Excel</span><span class="by">Coursera</span></li>
+            <li><span class="name">Using Basic Formulas and Functions in Excel</span><span class="by">Coursera</span></li>
+            <li><span class="name">From Excel to Power BI</span><span class="by">Coursera</span></li>
+            <li><span class="name">Python and Statistics for Financial Analysis</span><span class="by">Hong Kong University</span></li>
+            <li><span class="name">Foundations of Data Science: K-Means Clustering in Python</span><span class="by">University of London</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Technology</h3>
+          <ul class="certs">
+            <li><span class="name">Introduction to Generative AI</span><span class="by">Google Cloud Training</span></li>
+            <li><span class="name">Introduction to Cybersecurity (training and mentorship)</span><span class="by">Ajira Digital Program</span></li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Finance and work readiness</h3>
+          <ul class="certs">
+            <li><span class="name">Forensic Accounting and Fraud Examination</span><span class="by">West Virginia University</span></li>
+            <li><span class="name">Ready to Work</span><span class="by">Absa Kenya</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-## 🚀 Kylyst Solutions Hub
+    <section class="ek-sec" aria-labelledby="contact">
+      <h2 id="contact">Get in touch</h2>
+      <div class="contact-wrap">
+        <ul class="contact">
+          <li><span class="k">WhatsApp and calls</span><a href="https://wa.me/254702371788" target="_blank" rel="noopener">0702 371 788</a></li>
+          <li><span class="k">Email</span><a href="mailto:erickigo36@gmail.com">erickigo36@gmail.com</a></li>
+          <li><span class="k">Email for Kylyst</span><a href="mailto:kygopython@gmail.com">kygopython@gmail.com</a></li>
+          <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/eric-kigo-b90359185/" target="_blank" rel="noopener">Erick Kigo</a></li>
+          <li><span class="k">GitHub</span><a href="https://github.com/kygosloth" target="_blank" rel="noopener">kygosloth</a></li>
+          <li><span class="k">Kylyst Solutions Hub</span><a href="https://kyrick-solutions-hub.vercel.app/" target="_blank" rel="noopener">kyrick-solutions-hub.vercel.app</a></li>
+        </ul>
+        <figure class="qr">
+          <img src="images/portfolio-qr.png" alt="QR code that opens Erick Kigo's portfolio" width="208" height="208">
+          <figcaption>Scan to open my portfolio</figcaption>
+          <a href="images/portfolio-qr-card.png" download="erick-kigo-portfolio-qr.png">Download QR card</a>
+        </figure>
+      </div>
+    </section>
 
-<p align="center">
-  <a href="https://kyrick-solutions-hub.vercel.app/">
-    <img src="https://img.shields.io/badge/KYLYST-Solutions%20Hub-2ea043?style=for-the-badge&logo=rocket&logoColor=white" height="40" />
-  </a>
-</p>
+  </main>
 
-<p align="center"><i>Overwhelmed with data or schoolwork? Affordable, reliable and professional help.</i></p>
+  <footer class="ek-foot">
+    <p>&copy; 2026 Erick Kigo. All rights reserved.</p>
+  </footer>
 
-| | Service | |
-|---|---------|---|
-| 📊 | **Software tools and training** | Tableau, SPSS, Stata, Excel and Power BI |
-| 🧠 | **Programming and data analysis** | Python, R, SPSS, Stata, Power BI, Excel |
-| 💼 | **Financial and managerial work** | Accounting, NPV and IRR analysis, business consulting |
-| 🌐 | **Portfolio and web development** | Portfolio websites and web solutions |
-| 📄 | **Reports** | Essays, term papers, AI insights and plagiarism reports |
-| 📈 | **Presentations** | PowerPoint design, data visualisation, professional reports |
-| 🖥️ | **Online support** | Live consulting, assignment help and tutoring |
-
-<p align="center">
-  <a href="https://wa.me/254702371788"><img src="https://img.shields.io/badge/Book%20a%20consultation-WhatsApp%20%2B254%20702%20371%20788-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
-</p>
-
----
-
-## 📁 Featured project
-
-### ⛽ [Fuel Price Analysis and CPI Correlation, Nairobi (Feb 2024 to Feb 2025)](https://github.com/kygosloth/fuel-cpi-correlation)
-
-I wanted to see how fuel prices in Nairobi move with the exchange rate, world crude prices and CPI, so I pulled the data together and analysed it with correlation and regression.
-
-- Super Petrol, Diesel and Kerosene prices move almost together. Super Petrol correlates **0.96** with both Diesel and Kerosene.
-- Super Petrol also tracks Murban crude (**0.86**) and the exchange rate (**0.74**).
-- Against Transport and Energy CPI, fuel prices showed an inverse relationship over this period.
-- My regression estimated that a KSh 5 rise in fuel prices goes with a **0.48-point fall in CPI** (R² = 0.91).
-- I also looked at what could help: monitoring subsidies and policy to steady CPI, and hedging or diversifying fuel imports to soften exchange rate swings.
-
-**Tools:** Python · Pandas · NumPy · Matplotlib · Seaborn
-
-[📂 Repository](https://github.com/kygosloth/fuel-cpi-correlation) · [🌐 Full write-up](https://erick-kigo-portfolio.vercel.app/projects.html)
-
-### 📈 Charts from the project
-
-<p align="center">
-  <img src="https://erick-kigo-portfolio.vercel.app/images/correlation_fuel_prices.jpg" width="48%" alt="Correlation matrix: fuel prices" />
-  <img src="https://erick-kigo-portfolio.vercel.app/images/correlation_cpi.jpg" width="48%" alt="Correlation matrix: CPI" />
-</p>
-<p align="center">
-  <img src="https://erick-kigo-portfolio.vercel.app/images/exchange_murban.jpg" width="48%" alt="Exchange rate vs Murban crude" />
-  <img src="https://erick-kigo-portfolio.vercel.app/images/fuel_cpi.jpg" width="48%" alt="Fuel prices vs CPI" />
-</p>
-<p align="center">
-  <img src="https://erick-kigo-portfolio.vercel.app/images/regression_coefficients.jpg" width="60%" alt="Regression coefficients" />
-</p>
-
----
-
-## 📊 GitHub stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=kygosloth&theme=merko&hide_border=false&include_all_commits=false&count_private=false" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kygosloth&theme=merko&hide_border=false&layout=compact" height="165" />
-</p>
-
-<p align="center">
-  <img src="https://nirzak-streak-stats.vercel.app/?user=kygosloth&theme=merko&hide_border=false" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=kygosloth&theme=react-dark&hide_border=true&area=true" width="100%" alt="Contribution activity graph" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=kygosloth&theme=radical" width="48%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=kygosloth&theme=radical" width="48%" />
-</p>
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=kygosloth&theme=radical" width="48%" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=kygosloth&theme=radical" width="48%" />
-</p>
-
-## 🏆 Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=kygosloth&theme=radical&no-frame=false&no-bg=true&margin-w=4" />
-</p>
-
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random quote" />
-</p>
-
----
-
-## 📱 Scan to open my portfolio
-
-<p align="center">
-  <img src="https://erick-kigo-portfolio.vercel.app/images/portfolio-qr.png" width="170" alt="QR code to my portfolio" />
-</p>
-
----
-
-## 🤝 Let's work together
-
-I'm open to data analysis, statistics, dashboard and web projects. The quickest way to reach me is WhatsApp.
-
-<p align="center">
-  <a href="https://wa.me/254702371788"><img src="https://img.shields.io/badge/WhatsApp-%2B254%20702%20371%20788-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
-  <a href="mailto:kygopython@gmail.com"><img src="https://img.shields.io/badge/Email-kygopython%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://kyrick-solutions-hub.vercel.app/"><img src="https://img.shields.io/badge/Kylyst%20Solutions%20Hub-2ea043?style=for-the-badge&logo=rocket&logoColor=white" /></a>
-</p>
-
-<p align="center"><i>"In God we trust. All others must bring data."</i> 📉</p>
-
-<p align="center">
-  <a href="https://visitcount.itsvg.in"><img src="https://visitcount.itsvg.in/api?id=kygosloth&icon=0&color=0" /></a>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer" width="100%" />
-</p>
+</body>
+</html>
